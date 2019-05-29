@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>My First Web Games</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+<br>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+function drawface() {
+    ctx.fillStyle = "yellow";
+    ctx.fillRect(170, 70, 150, 150);
+}
+
+function draweyes() {
+    ctx.beginPath();
+    ctx.fillStyle = "Black";
+    ctx.arc(210, 120, 17, 2 * Math.PI, false);
+    ctx.fillStyle = "Black";
+    ctx.arc(280, 120, 17, 2 * Math.PI, false);
+    ctx.fill();
+}
+
+function drawmouth() {
+    ctx.beginPath();
+    ctx.fillStyle = "Red";
+    ctx.arc(245,175,35,0,Math.PI,false); 
+    ctx.fill();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawface();
+    draweyes();
+    drawmouth();
+}
+
+draw();
+</script>
+
+</body>
+</html>
